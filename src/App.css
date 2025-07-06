@@ -1,0 +1,15 @@
+.my-hover:hover{
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+.custom-hover{
+    background-color: transparent;
+    color: black;
+    transition: all 0.3s ease;
+}
+
+.custom-hover:hover{
+      color: white;
+    transition: all 0.3s ease-in-out;
+}
