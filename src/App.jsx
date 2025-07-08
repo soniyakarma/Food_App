@@ -5,6 +5,7 @@ import Success from './Pages/Success';
 // import SuccessPopup from './Pages/Success';
 import Error from './Pages/Error';
 import './App.css'
+import Login from './Pages/Login';
 
 function App() {
   const [showPopup, setShowPopup] = useState(false);
@@ -14,8 +15,10 @@ function App() {
         <div className="relative">
           {showPopup && <Success onClose={() => setShowPopup(false)} />}
           <Routes>
-            <Route path='/' element={<Home setShowPopup={setShowPopup} />}></Route>
-                        <Route path='/Home' element={<Home setShowPopup={setShowPopup} />}></Route>
+            <Route path='/' element={<Login/>}></Route>
+            <Route path='/Login' element={<Login/>}></Route>
+            {/* <Route path='/' element={<Home setShowPopup={setShowPopup} />}></Route> */}
+           <Route path='/Home' element={<Home setShowPopup={setShowPopup} />}></Route>
             <Route path='/success' element={<Success />}></Route>
             <Route path='/*' element={<Error />}></Route>
           </Routes>

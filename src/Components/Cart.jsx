@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { IoMdClose } from "react-icons/io";
 import CartItem from './CartItem';
 import { useSelector } from "react-redux";
@@ -8,6 +8,7 @@ import Success from '../Pages/Success';
 const Cart = ({ setShowPopup }) => {    //  used to select the item (cart item )
     const [activeCart, setActiveCart] = useState(true);
     const [showCart, setShowCart] = useState(true);
+   
     const cartItems = useSelector((state) => state.cart.cart);     // console.log(cartItems);  // reduce method have 2 parameter ,1 accumilator (total) ,2nd is value 
     const totalQuantity = cartItems.reduce((totalQty, item) => totalQty + item.qty, 0);  // 0 is initial value of total qty
     const totalPrice = cartItems.reduce((total, item) => total + item.qty * item.price, 0);
@@ -15,7 +16,7 @@ const Cart = ({ setShowPopup }) => {    //  used to select the item (cart item )
         setShowPopup(true);
     }
     return (<>  {showCart && (
-        <div className={`fixed right-0 top-0 lg:w-[30vw] sm:w-[40vw]  bg-white p-3 mb-3 shadow-lg rounded-xl max-h-screen overflow-y-auto    ${activeCart ? "translate-x-0" : "translate-x-full"}`}>
+        <div className={`fixed right-0 top-0 lg:w-[30vw]  bg-white p-3 mb-3 shadow-lg rounded-xl max-h-screen overflow-y-auto    ${activeCart ? "translate-x-0" : "translate-x-full"}`}>
             <div 
              className='flex justify-between items-center my-3 '>
                 <span className='text-xl font-bold '>My Order</span>

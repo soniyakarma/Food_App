@@ -6,7 +6,8 @@ const FoodCard = ({ id, name, price, desc, img, rating, handleToast}) => {
     const dispatch = useDispatch();
     return (
         <>
-            <div className='w-[250px]  md:w-[250px] h-[auto]  p-5 bg-white flex flex-col rounded-lg gap-2 '>
+            <div className="w-full sm:w-[48%] md:w-[200px] lg:w-[250px] min-w-[200px] max-w-full p-4 bg-white flex flex-col rounded-lg gap-2 shadow-md transition-all duration-300 overflow-x-auto">
+
                 <img src={img}
                     className='w-full h-[130px] hover:scale-110 cursor-grab transition-all duration-500 ease-in-out overflow-hidden' />
                 <div><h2 className='font-bold '>{name}</h2>
